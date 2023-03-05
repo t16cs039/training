@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  elasticsearch:
+    image: elasticsearch:7.17.8
+    container_name: 'elasticsearch'
+    working_dir: '/home/nakadats'
+    tty: true
+    ports:
+      - 9200:9200
+    environment:
+      - discovery.type=single-node
